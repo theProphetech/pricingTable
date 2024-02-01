@@ -1,0 +1,217 @@
+:root {
+    --bg--clr1: hsla(50, 90%, 50%, 1);
+    --bg--clr2: hsla(0, 10%, 90%, 1);
+    --txt1--clr: #000;
+    --txt2--clr: #818181;
+    --font--family: "Montserrat"
+}
+
+*::before,
+*::after,
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 14px;
+    outline: none;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: local("Montserrate"),
+        url("/asset/Montserrat/Montserrat-VariableFont_wght.ttf") format("truetype");
+}
+
+body {
+    padding: 6rem 0rem;
+    font-family: "Montserrat";
+    min-height: 100vh;
+    background-color: var(--bg--clr2);
+    width: 100%;
+}
+
+body::before {
+    content: "";
+    width: 100%;
+    height: calc(100% - 40.5%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--bg--clr1);
+}
+
+body * {
+    z-index: 5;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    font-size: 12px;
+    margin-left: 1.2rem;
+    color: var(--txt1--clr);
+    /* border: 1px solid green; */
+    text-transform: capitalize;
+    margin-top: 0.4rem;
+}
+
+span {
+    display: inline-block;
+}
+
+.choose--plan {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    width: 100%;
+    width: calc(100% - 600px);
+    margin: 0 auto;
+}
+
+.sec1--title>h1 {
+    font-size: 25px;
+    font-weight: 700;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 1px #000;
+}
+
+.m--y--con {
+    --black: #000;
+    background-color: var(--black);
+    width: max-content;
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.4rem;
+    border-radius: 150px;
+}
+
+.m--y--con>button {
+    font-size: 12px;
+    display: inline-block;
+    --whiteColor: #fff;
+    background-color: var(--whiteColor);
+    border: none;
+    padding: 0.46rem 1rem;
+    border-radius: 100px;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.m--y--con>button:first-child {
+    background-color: transparent;
+    color: var(--whiteColor);
+}
+
+.price--table {
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    width: calc(100% - 600px);
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+.price--box {
+    /* border: 2px solid green; */
+    width: max-content;
+
+}
+
+.p--sub--box {
+    padding: 1rem 3rem 2.2rem 3rem;
+    width: 100%;
+    /* border: 1px solid red; */
+    text-align: center;
+    border-radius: 8px 8px 0 0;
+    letter-spacing: 1px;
+    background-color: var(--bg--clr2);
+    box-shadow: 0px 0 15px 0 rgba(0, 0, 0, 0.1);
+}
+
+.plan--name {
+    text-transform: capitalize;
+    font-weight: 700;
+
+}
+
+.plan--price {
+    margin-top: 1rem;
+}
+
+.plan--price>h1 {
+    font-size: 25px;
+}
+
+.plan--btn {
+    margin-top: 2rem;
+}
+
+.plan--btn>span {
+    display: inline-block;
+    background-color: #000;
+    padding: 0.6rem 1.3rem;
+    color: #fff;
+    text-transform: capitalize;
+    border-radius: 3px;
+    font-size: 12px;
+    transition: transform linear 300ms;
+    cursor: pointer;
+}
+
+.plan--btn>span:hover {
+    transform: scale(1.05);
+
+}
+
+.plan--benefits {
+    /* border: 2px solid red; */
+    padding: 2rem 2rem;
+    background-color: #fff;
+    box-shadow: 0px 0 15px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 8px 8px;
+}
+
+.plan--benefits li::before {
+    content: "\2713";
+    color: #000;
+    font-size: 12px;
+    font-weight: 900;
+    position: absolute;
+    transform: translate(-17px, 0);
+}
+
+
+@media screen and (max-width:800px) {
+    body::before {
+        height: calc(100% - 20%);
+    }
+
+    .choose--plan {
+        width: 100%;
+        /* border: 2px solid red; */
+        isolation: isolate;
+        padding: 0 3rem;
+    }
+
+    .price--table {
+        /* border: 2px solid red; */
+        flex-direction: column;
+        width: calc(100%);
+        justify-content: center;
+        align-items: center;
+        padding-top:  3rem;
+        gap: 1.2rem;
+    }
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1360px) {
+    .price--table{
+        gap: 1rem;
+        width: calc(100% - 500px);
+    }
+}
